@@ -463,9 +463,9 @@ public class Loginpage {
 
 		driver.get("http://3.236.10.147/login");
 
-		driver.findElement(By.name(p.getProperty("AdminUsername"))).sendKeys("admin@flush.com");
+		driver.findElement(By.name(p.getProperty("AdminUsername"))).sendKeys("");
 
-		driver.findElement(By.name(p.getProperty("AdminPassword"))).sendKeys("Admin@4321");
+		driver.findElement(By.name(p.getProperty("AdminPassword"))).sendKeys("");
 
 		driver.findElement(By.xpath(p.getProperty("AdminPanelLogin"))).click();
 
