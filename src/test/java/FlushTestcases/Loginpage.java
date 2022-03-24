@@ -145,22 +145,21 @@ public class Loginpage {
 		driver.findElement(By.xpath(p.getProperty("RegisterPassword"))).sendKeys("satish@123");
 
 		driver.findElement(By.xpath(p.getProperty("TermsAndConditionsCheckbox"))).click();
-		
-		WebElement Playnowbutton= driver.findElement(By.xpath(p.getProperty("PlayNowbutton")));
-		
-	
+
+		WebElement Playnowbutton = driver.findElement(By.xpath(p.getProperty("PlayNowbutton")));
+
 		Actions builder = new Actions(driver);
-        builder.moveToElement(Playnowbutton).click(Playnowbutton);
-        builder.perform();
-		//Playnowbutton.click();
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Userdropdown"))));
+		builder.moveToElement(Playnowbutton).click(Playnowbutton);
 
-		driver.findElement(By.xpath(p.getProperty("Userdropdown"))).click();
+		builder.perform();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("DropDown"))));
 
 	}
 
 	public void LoginWelcomeGoogle(WebDriver driver) throws IOException {
+
 		Properties p = new Properties();
 
 		FileInputStream fi = new FileInputStream(".//Login.properties");
@@ -345,6 +344,7 @@ public class Loginpage {
 		WebElement email = driver.findElement(By.xpath(p.getProperty("Joinemail")));
 
 		Actions action = new Actions(driver);
+
 		action.moveToElement(email).perform();
 
 		email.click();
@@ -360,9 +360,8 @@ public class Loginpage {
 		driver.findElement(By.xpath(p.getProperty("PlayNowbutton"))).click();
 
 	}
-	
-	public void JoinEmailLogin(WebDriver driver) throws IOException
-	{
+
+	public void JoinEmailLogin(WebDriver driver) throws IOException {
 		Properties p = new Properties();
 
 		FileInputStream fi = new FileInputStream(".//Login.properties");
@@ -374,11 +373,11 @@ public class Loginpage {
 		WebElement email = driver.findElement(By.xpath(p.getProperty("Joinemail")));
 
 		Actions action = new Actions(driver);
-		
+
 		action.moveToElement(email).perform();
 
 		email.click();
-		
+
 		driver.findElement(By.xpath(p.getProperty("Login"))).click();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Welcomeemail"))));
@@ -390,14 +389,10 @@ public class Loginpage {
 		driver.findElement(By.xpath(p.getProperty("Welcomeplaynow"))).click();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Dashboardwallet"))));
-		
-		
-		
-		
+
 	}
-	
-	public void JoinEmailGoogleLogin(WebDriver driver) throws IOException
-	{
+
+	public void JoinEmailGoogleLogin(WebDriver driver) throws IOException {
 		Properties p = new Properties();
 
 		FileInputStream fi = new FileInputStream(".//Login.properties");
@@ -405,17 +400,17 @@ public class Loginpage {
 		p.load(fi);
 
 		wait = new WebDriverWait(driver, 20);
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Joinemail"))));
 
 		WebElement email = driver.findElement(By.xpath(p.getProperty("Joinemail")));
 
 		Actions action = new Actions(driver);
-		
+
 		action.moveToElement(email).perform();
-		
+
 		email.click();
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("JoinEmailGoogle"))));
 
 		driver.findElement(By.xpath(p.getProperty("JoinEmailGoogle"))).click();
@@ -437,11 +432,11 @@ public class Loginpage {
 		driver.findElement(By.xpath(p.getProperty("EmailNext"))).click();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("GmailPassword"))));
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("GmailPassword"))));
 
 		driver.findElement(By.xpath(p.getProperty("GmailPassword"))).sendKeys("Satvik@786");
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("PasswordNext"))));
 
 		driver.findElement(By.xpath(p.getProperty("PasswordNext"))).click();
@@ -453,9 +448,29 @@ public class Loginpage {
 		System.out.println("Login through gmail successfully");
 
 		driver.findElement(By.xpath(p.getProperty("Userdropdown"))).click();
-		
+
 	}
-	
-	
+
+	public void adminpanel(WebDriver driver) throws IOException {
+
+		Properties p = new Properties();
+
+		FileInputStream fi = new FileInputStream(".//Login.properties");
+
+		p.load(fi);
+
+		wait = new WebDriverWait(driver, 50);
+
+		driver.get("http://3.236.10.147/login");
+
+		driver.findElement(By.name(p.getProperty("AdminUsername"))).sendKeys("admin@flush.com");
+
+		driver.findElement(By.name(p.getProperty("AdminPassword"))).sendKeys("Admin@4321");
+
+		driver.findElement(By.xpath(p.getProperty("AdminPanelLogin"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("AdminDashboardLogout"))));
+
+	}
 
 }

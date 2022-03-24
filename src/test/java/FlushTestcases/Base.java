@@ -38,7 +38,7 @@ public class Base {
 	@AfterMethod
 	public void closebrowser() throws InterruptedException {
 		
-		driver.quit();
+		//driver.quit();
 	}
 		
 }

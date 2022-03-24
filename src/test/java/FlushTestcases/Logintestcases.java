@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class Logintestcases extends Base {
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 	public void WelcomeLogin() throws IOException {
 		Loginpage page = new Loginpage();
 
@@ -21,7 +21,7 @@ public class Logintestcases extends Base {
 		page.LoginWelcomeregistration(driver);
 	}
 
-	@Test(enabled = true, priority = 3)
+	@Test(enabled = false, priority = 3)
 
 	public void LoginWelcomegoogle() throws IOException {
 
@@ -30,7 +30,7 @@ public class Logintestcases extends Base {
 		page.LoginWelcomeGoogle(driver);
 	}
 
-	@Test(enabled = true, priority = 4)
+	@Test(enabled = false, priority = 4)
 
 	public void LoginWelcomeForgotPassword() throws IOException {
 
@@ -39,7 +39,7 @@ public class Logintestcases extends Base {
 		page.LoginWelcomeForgot(driver);
 	}
 
-	@Test(enabled = true, priority = 5)
+	@Test(enabled = false, priority = 5)
 
 	public void PasswordRecoveryBackToLogin() throws IOException {
 
@@ -48,7 +48,7 @@ public class Logintestcases extends Base {
 		page.RecoveryPasswordBackToLogin(driver);
 	}
 
-	@Test(enabled = true, priority = 6)
+	@Test(enabled = false, priority = 6)
 
 	public void Signup() throws IOException, InterruptedException {
 		
@@ -57,7 +57,7 @@ public class Logintestcases extends Base {
 		page.signup(driver);
 	}
 	
-	@Test(enabled = true, priority = 7)
+	@Test(enabled = false, priority = 7)
 
 	public void SignupLog() throws IOException, InterruptedException {
 		
@@ -68,7 +68,7 @@ public class Logintestcases extends Base {
 	
 	
 
-	@Test(enabled = true , priority=8)
+	@Test(enabled = false , priority=8)
 	
 	public void NormaluserLogin() throws IOException {
 
@@ -77,7 +77,7 @@ public class Logintestcases extends Base {
 		page.Google(driver);
 	}
 
-	@Test(enabled = true,priority=9)
+	@Test(enabled = false,priority=9)
 	public void Joinwithyouremail() throws IOException, InterruptedException {
 
 		Loginpage page = new Loginpage();
@@ -86,7 +86,7 @@ public class Logintestcases extends Base {
 
 	}
 	
-	@Test(enabled= true ,priority=10)
+	@Test(enabled= false ,priority=10)
 	public void JoinWithYourEmailLogin() throws IOException
 	{
 		Loginpage page = new Loginpage();
@@ -95,12 +95,21 @@ public class Logintestcases extends Base {
 		
 	}
 	
-	@Test(enabled= true ,priority=11)
+	@Test(enabled= false ,priority=11)
 	public void JoinEmailLoginGoogle() throws IOException 
 	{
 		Loginpage page = new Loginpage();
 		
 		page.JoinEmailGoogleLogin(driver);
+		
+	}
+	
+	@Test(enabled= false ,priority=12)
+	public void Adminlogin() throws IOException 
+	{
+		Loginpage page = new Loginpage();
+		
+		page.adminpanel(driver);
 		
 	}
 

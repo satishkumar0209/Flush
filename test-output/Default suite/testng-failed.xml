@@ -5,11 +5,8 @@
     <classes>
       <class name="FlushTestcases.Logintestcases">
         <methods>
-          <include name="JoinWithYourEmailLogin"/>
           <include name="closebrowser"/>
           <include name="LoginWelcomeregistration"/>
-          <include name="JoinEmailLoginGoogle"/>
-          <include name="Joinwithyouremail"/>
           <include name="openingbrowser"/>
         </methods>
       </class> <!-- FlushTestcases.Logintestcases -->
