@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Satish\AppData\Local\Temp\testng-eclipse--1446861224\testng-customsuite.xml</span>
+                    <span>C:\Users\Satish\AppData\Local\Temp\testng-eclipse-1443331739\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="FlushTestcases.Logintestcases" hash-for-method="LoginWelcomeregistration">LoginWelcomeregistration</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="FlushTestcases.Logintestcases" hash-for-method="WelcomeLogin">WelcomeLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -127,9 +127,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginWelcomeregistration">
-                  </a> <!-- LoginWelcomeregistration -->
-                  <span class="method-name">LoginWelcomeregistration</span>
+                  <a name="WelcomeLogin">
+                  </a> <!-- WelcomeLogin -->
+                  <span class="method-name">WelcomeLogin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +137,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Satish\AppData\Local\Temp\testng-eclipse--1446861224\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Satish\AppData\Local\Temp\testng-eclipse-1443331739\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -188,14 +188,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'LoginWelcomeregistration')
+data.setCell(0, 1, 'WelcomeLogin')
 data.setCell(0, 2, 'FlushTestcases.Logintestcases')
-data.setCell(0, 3, 36149);
+data.setCell(0, 3, 26577);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 36 seconds</span>
+              <span class="suite-total-time">Total running time: 26 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -210,7 +210,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">11 ignored methods</span>
+            <span class="header-content">15 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -218,25 +218,33 @@ return data;
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">JoinWithYourEmailLogin</span>
                 <br/>
-                <span class="ignored-method-name">LoginWelcomeForgotPassword</span>
+                <span class="ignored-method-name">SignupLog</span>
                 <br/>
-                <span class="ignored-method-name">Joinwithyouremail</span>
+                <span class="ignored-method-name">LoginWelcomeregistration</span>
                 <br/>
                 <span class="ignored-method-name">JoinEmailLoginGoogle</span>
                 <br/>
-                <span class="ignored-method-name">PasswordRecoveryBackToLogin</span>
-                <br/>
-                <span class="ignored-method-name">SignupLog</span>
-                <br/>
-                <span class="ignored-method-name">LoginWelcomegoogle</span>
-                <br/>
-                <span class="ignored-method-name">WelcomeLogin</span>
+                <span class="ignored-method-name">CrashGameLogin</span>
                 <br/>
                 <span class="ignored-method-name">NormaluserLogin</span>
                 <br/>
-                <span class="ignored-method-name">Adminlogin</span>
+                <span class="ignored-method-name">Joinwithyouremail</span>
+                <br/>
+                <span class="ignored-method-name">GameWheel</span>
+                <br/>
+                <span class="ignored-method-name">Gamecrash</span>
                 <br/>
                 <span class="ignored-method-name">Signup</span>
+                <br/>
+                <span class="ignored-method-name">LoginWelcomeForgotPassword</span>
+                <br/>
+                <span class="ignored-method-name">PasswordRecoveryBackToLogin</span>
+                <br/>
+                <span class="ignored-method-name">GameMines</span>
+                <br/>
+                <span class="ignored-method-name">Adminlogin</span>
+                <br/>
+                <span class="ignored-method-name">LoginWelcomegoogle</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -254,12 +262,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">LoginWelcomeregistration</span>
-                <span class="method-start">51289 ms</span>
+                <span class="method-name">WelcomeLogin</span>
+                <span class="method-start">27362 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closebrowser</span>
-                <span class="method-start">87494 ms</span>
+                <span class="method-start">53944 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

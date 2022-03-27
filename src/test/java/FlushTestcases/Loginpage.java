@@ -15,11 +15,41 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class Loginpage {
 
 	static WebDriverWait wait;
+	@BeforeTest
+	public void setExtent() {
+		
+		
+		ExtentReports extent = new ExtentReports();
+			  
+		String path = System.getProperty("user.dir") + "\\reports\\extentreport.html";
 
+		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+		
+		extent.attachReporter(reporter);
+		
+		
+
+		
+
+	}
+
+	@AfterTest
+	public void endReport() {
+		ExtentReports extent = new ExtentReports();
+		
+		extent.flush();
+		
+	}
+	 
 	public void LoginWelcomeLogin(WebDriver driver) throws IOException {
 
 		Properties p = new Properties();
@@ -461,7 +491,7 @@ public class Loginpage {
 
 		wait = new WebDriverWait(driver, 50);
 
-		driver.get("http://3.236.10.147/login");
+		driver.get(p.getProperty("AdminURL"));
 
 		driver.findElement(By.name(p.getProperty("AdminUsername"))).sendKeys("");
 
@@ -472,5 +502,223 @@ public class Loginpage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("AdminDashboardLogout"))));
 
 	}
+
+	public void Dicegame(WebDriver driver) throws IOException {
+
+		Properties p = new Properties();
+
+		FileInputStream fi = new FileInputStream(".//Login.properties");
+
+		p.load(fi);
+
+		wait = new WebDriverWait(driver, 50);
+
+		driver.get(p.getProperty("DiceGame"));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("BetButton"))));
+
+		driver.findElement(By.xpath(p.getProperty("BetButton"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Login"))));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Registration"))));
+
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		
+//		WebElement element = driver.findElement(By.xpath(p.getProperty("FeaturedSlots")));
+//		 
+//	       js.executeScript("arguments[0].scrollIntoView();", element);
+
+	}
+
+	public void Dicegamelogin(WebDriver driver) throws IOException {
+
+		Properties p = new Properties();
+
+		FileInputStream fi = new FileInputStream(".//Login.properties");
+
+		p.load(fi);
+
+		wait = new WebDriverWait(driver, 50);
+
+		driver.get(p.getProperty("DiceGame"));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("BetButton"))));
+
+		driver.findElement(By.xpath(p.getProperty("BetButton"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Login"))));
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Welcomeemail"))));
+
+		driver.findElement(By.xpath(p.getProperty("Welcomeemail"))).sendKeys("satishkumar@rapidinnovation.dev");
+
+		driver.findElement(By.xpath("//*[@placeholder='Password']")).sendKeys("Satvik@123");
+
+		driver.findElement(By.xpath(p.getProperty("Welcomeplaynow"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Dashboardwallet"))));
+	}
+
+	public void Crashgame(WebDriver driver) throws IOException {
+
+		Properties p = new Properties();
+
+		FileInputStream fi = new FileInputStream(".//Login.properties");
+
+		p.load(fi);
+
+		wait = new WebDriverWait(driver, 50);
+
+		driver.get(p.getProperty("CrashGame"));
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("BetButton"))));
+
+		driver.findElement(By.xpath(p.getProperty("BetButton"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Login"))));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Registration"))));
+	}
+	
+	public void CrashgameLogin(WebDriver driver) throws IOException {
+
+		Properties p = new Properties();
+
+		FileInputStream fi = new FileInputStream(".//Login.properties");
+
+		p.load(fi);
+
+		wait = new WebDriverWait(driver, 50);
+
+		driver.get(p.getProperty("CrashGame"));
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("BetButton"))));
+
+		driver.findElement(By.xpath(p.getProperty("BetButton"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Login"))));
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Welcomeemail"))));
+
+		driver.findElement(By.xpath(p.getProperty("Welcomeemail"))).sendKeys("satishkumar@rapidinnovation.dev");
+
+		driver.findElement(By.xpath("//*[@placeholder='Password']")).sendKeys("Satvik@123");
+
+		driver.findElement(By.xpath(p.getProperty("Welcomeplaynow"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Dashboardwallet"))));
+
+	}
+	
+	
+
+	public void Minesgame(WebDriver driver) throws IOException {
+
+		Properties p = new Properties();
+
+		FileInputStream fi = new FileInputStream(".//Login.properties");
+
+		p.load(fi);
+
+		wait = new WebDriverWait(driver, 50);
+
+		driver.get(p.getProperty("MinesGame"));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("BetButton"))));
+
+		driver.findElement(By.xpath(p.getProperty("BetButton"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Login"))));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Registration"))));
+
+	}
+
+	public void Minesgamelogin(WebDriver driver) throws IOException {
+
+		Properties p = new Properties();
+
+		FileInputStream fi = new FileInputStream(".//Login.properties");
+
+		p.load(fi);
+
+		wait = new WebDriverWait(driver, 50);
+
+		driver.get(p.getProperty("MinesGame"));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("BetButton"))));
+
+		driver.findElement(By.xpath(p.getProperty("BetButton"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Login"))));
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Welcomeemail"))));
+
+		driver.findElement(By.xpath(p.getProperty("Welcomeemail"))).sendKeys("satishkumar@rapidinnovation.dev");
+
+		driver.findElement(By.xpath("//*[@placeholder='Password']")).sendKeys("Satvik@123");
+
+		driver.findElement(By.xpath(p.getProperty("Welcomeplaynow"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Dashboardwallet"))));
+	}
+	public void Wheelgame(WebDriver driver) throws IOException {
+
+		Properties p = new Properties();
+
+		FileInputStream fi = new FileInputStream(".//Login.properties");
+
+		p.load(fi);
+
+		wait = new WebDriverWait(driver, 50);
+
+		driver.get(p.getProperty("WheelsGame"));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("BetButton"))));
+
+		driver.findElement(By.xpath(p.getProperty("BetButton"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Login"))));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Registration"))));
+
+	}
+	
+	public void Wheelgamelogin(WebDriver driver) throws IOException {
+
+		Properties p = new Properties();
+
+		FileInputStream fi = new FileInputStream(".//Login.properties");
+
+		p.load(fi);
+
+		wait = new WebDriverWait(driver, 50);
+
+		driver.get(p.getProperty("WheelsGame"));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("BetButton"))));
+
+		driver.findElement(By.xpath(p.getProperty("BetButton"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Login"))));
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Welcomeemail"))));
+
+		driver.findElement(By.xpath(p.getProperty("Welcomeemail"))).sendKeys("satishkumar@rapidinnovation.dev");
+
+		driver.findElement(By.xpath("//*[@placeholder='Password']")).sendKeys("Satvik@123");
+
+		driver.findElement(By.xpath(p.getProperty("Welcomeplaynow"))).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(p.getProperty("Dashboardwallet"))));
+		
+		
+
+	}
+	
+	
+	
+	
 
 }

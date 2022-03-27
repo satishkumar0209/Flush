@@ -6,7 +6,7 @@
       <class name="FlushTestcases.Logintestcases">
         <methods>
           <include name="closebrowser"/>
-          <include name="LoginWelcomeregistration"/>
+          <include name="WelcomeLogin"/>
           <include name="openingbrowser"/>
         </methods>
       </class> <!-- FlushTestcases.Logintestcases -->
